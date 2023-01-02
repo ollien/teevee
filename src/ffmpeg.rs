@@ -97,9 +97,9 @@ mod tests {
         let args = build_complex_filter_args(&files);
         assert_eq!(&args, &[
             "-filter_complex".to_string(),
-            "[0:v]scale=1920:1080:force_original_aspect_ratio=decrease:flags=lanczos,setsar=1:1,pad=1920:1080:-1:-1:color=black[v0]; \
-            [1:v]scale=1920:1080:force_original_aspect_ratio=decrease:flags=lanczos,setsar=1:1,pad=1920:1080:-1:-1:color=black[v1]; \
-            [2:v]scale=1920:1080:force_original_aspect_ratio=decrease:flags=lanczos,setsar=1:1,pad=1920:1080:-1:-1:color=black[v2]; \
+            "[0:v]scale=1920:1080:force_original_aspect_ratio=decrease,setsar=1:1,pad=1920:1080:-1:-1:color=black[v0]; \
+            [1:v]scale=1920:1080:force_original_aspect_ratio=decrease,setsar=1:1,pad=1920:1080:-1:-1:color=black[v1]; \
+            [2:v]scale=1920:1080:force_original_aspect_ratio=decrease,setsar=1:1,pad=1920:1080:-1:-1:color=black[v2]; \
             [v0] [0:a] [v1] [1:a] [v2] [2:a] concat=n=3:v=1:a=1 [v] [a]".to_string(),
             "-map".to_string(),
             "[v]".to_string(),
