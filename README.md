@@ -29,6 +29,9 @@ video_globs:
 rtmp_uri: "rtmp://my.rtmp.server/live/key"
 ```
 
+## Limitations
+In order to not reach the limit on the number of characters in a command, files are encoded 100 at a time. There may be a disconnection in your RTMP stream every 100 files.
+
 ## Planned features
 - [ ] "Schedule preview", just like real TV!
 - [ ] `docker-compose` setup so the RMTP server doesn't have to be managed separately
